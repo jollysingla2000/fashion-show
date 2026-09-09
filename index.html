@@ -3,13 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#673ab7">
   <title>Ganesh Chaturthi Fashion Show 2026</title>
   <style>
-    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    html, body {
-      width: 100%; margin: 0; padding: 0; background: #f1ecf9;
+    :root {
+      color-scheme: light;
+      background-color: #f1ecf9;
+    }
+    * { 
+      box-sizing: border-box; 
+      -webkit-tap-highlight-color: transparent; 
+    }
+    html {
+      background-color: #f1ecf9 !important;
+      color: #202124;
+    }
+    body {
+      width: 100%; 
+      margin: 0; 
+      padding: 0; 
+      background-color: #f1ecf9 !important;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: #202124; font-size: 16px; -webkit-text-size-adjust: 100%;
+      color: #202124; 
+      font-size: 16px; 
+      -webkit-text-size-adjust: 100%;
     }
     .wrapper { padding: 10px; width: 100%; }
     .container {
@@ -272,7 +290,6 @@
     document.getElementById('successMsg').style.display = 'block';
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Send payload in background
     fetch(SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
@@ -296,4 +313,4 @@
 </script>
 
 </body>
-</html>
+</html>f
