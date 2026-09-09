@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ganesh Chaturthi Fashion Show 2026</title>
+  <style>
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body {
+      width: 100%; margin: 0; padding: 0; background: #f1ecf9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #202124; font-size: 16px; -webkit-text-size-adjust: 100%;
+    }
+    .wrapper { padding: 10px; width: 100%; }
+    .container {
+      width: 100%; max-width: 600px; margin: 0 auto 30px auto;
+      background: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); overflow: hidden;
+      position: relative;
+    }
+    .header { background: linear-gradient(135deg, #673ab7, #512da8); color: white; padding: 24px 16px; text-align: center; }
+    .header h1 { margin: 0 0 6px 0; font-size: 22px; font-weight: 700; line-height: 1.3; }
+    .header p { margin: 0; font-size: 14px; opacity: 0.95; }
+    .content { padding: 16px; }
+    .card { background: #faf8fd; border: 1px solid #e5dcf4; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+    .card h3 { margin: 0 0 6px 0; font-size: 17px; color: #4a148c; }
+    .day-rule-badge { font-size: 12px; color: #b71c1c; font-weight: 600; margin-bottom: 12px; display: inline-block; background: #ffebee; padding: 4px 8px; border-radius: 4px; }
+    .field { margin-bottom: 16px; }
+    label { display: block; font-weight: 600; font-size: 15px; margin-bottom: 6px; color: #333; }
+    .hint { font-size: 13px; color: #666; margin-bottom: 6px; line-height: 1.4; }
+    input[type="text"], input[type="tel"], select {
+      width: 100%; padding: 14px 12px; border: 1.5px solid #c7b8e3; border-radius: 6px; font-size: 16px; background: #ffffff; outline: none; -webkit-appearance: none; appearance: none;
+    }
+    select {
+      background-image: url('data:image/svg+xml;utf8,<svg fill="%23673ab7" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+      background-repeat: no-repeat; background-position: right 10px center; padding-right: 35px;
+    }
+    input[type="text"]:focus, input[type="tel"]:focus, select:focus {
+      border-color: #673ab7; box-shadow: 0 0 0 2px rgba(103, 58, 183, 0.2);
+    }
+    .radio-option { display: flex; align-items: center; gap: 12px; font-size: 16px; padding: 10px 0; cursor: pointer; font-weight: normal; }
+    .radio-option input[type="radio"] { width: 22px; height: 22px; accent-color: #673ab7; cursor: pointer; margin: 0; flex-shrink: 0; }
+    .expand-box { display: none; margin: 10px 0 16px 0; padding: 14px; background: #ffffff; border-left: 4px solid #673ab7; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+    .btn-submit { width: 100%; background: #673ab7; color: white; border: none; padding: 16px; border-radius: 8px; font-size: 17px; font-weight: 700; cursor: pointer; margin-top: 8px; }
+    
+    .success-card { display: none; text-align: center; padding: 40px 16px; }
+    .success-icon { font-size: 54px; color: #2e7d32; margin-bottom: 12px; }
+    .btn-another { width: 100%; margin-top: 24px; background: #673ab7; color: white; border: none; padding: 16px; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="container">
+    <div class="header">
+      <h1>Ganesh Chaturthi Fashion Show 2026</h1>
+      <p>Registration Form (Day 1: 18th Sept | Day 2: 19th Sept)</p>
+    </div>
+
+    <div class="content" id="formWrapper">
+      <form id="showForm" onsubmit="submitRegistration(event)">
+        
+        <fieldset id="formFields" style="border: none; margin: 0; padding: 0;">
+          <div class="card">
+            <h3>Contestant Details</h3>
+            
+            <div class="field">
+              <label>Contestant Name(s) *</label>
+              <div class="hint">For Duo or Couple, please separate multiple names with commas (e.g. Ram, Sham)</div>
+              <input type="text" id="names" required placeholder="e.g. Ram, Sham">
+            </div>
+
+            <div class="field">
+              <label>Flat No. *</label>
+              <div class="hint">e.g., W2-1104</div>
+              <input type="text" id="flat" required placeholder="e.g. W2-1104">
+            </div>
+
+            <div class="field">
+              <label>Phone Number *</label>
+              <div class="hint">10-digit mobile number</div>
+              <input type="tel" id="phone" pattern="^[6-9]\\d{9}$" required placeholder="10-digit mobile number">
+            </div>
+
+            <div class="field" style="margin-bottom:0;">
+              <label>Alternate Phone Number</label>
+              <div class="hint">10-digit mobile number (optional)</div>
+              <input type="tel" id="altPhone" pattern="^[6-9]\\d{9}$" placeholder="Optional">
+            </div>
+          </div>
+
+          <!-- DAY 1: 18th Sept -->
+          <div class="card">
+            <h3>Day 1 (18th Sept) Event Selection</h3>
+            <span class="day-rule-badge">Max 1 category allowed on Day 1</span>
+
+            <label class="radio-option">
+              <input type="radio" name="day1Event" value="none" checked onchange="handleDay1Change(this.value)">
+              Not Participating on Day 1
+            </label>
+
+            <label class="radio-option">
+              <input type="radio" name="day1Event" value="duo" onchange="handleDay1Change(this.value)">
+              Parent-Kid Duo Round
+            </label>
+
+            <div id="boxDuo" class="expand-box">
+              <div class="field">
+                <label>Parent-Kid Duo Theme *</label>
+                <select id="duoTheme">
+                  <option value="">-- Select Theme --</option>
+                  <option value="Color-Coordinated Traditional Wear">Color-Coordinated Traditional Wear</option>
+                  <option value="Mythological Duo (Shiva-Ganesh, Yashoda-Krishna)">Mythological Duo (Shiva-Ganesh, Yashoda-Krishna)</option>
+                  <option value="Regional Folk / Cultural Wear">Regional Folk / Cultural Wear</option>
+                  <option value="Modern Fusion / Indo-Western">Modern Fusion / Indo-Western</option>
+                  <option value="Other / Custom Theme">Other / Custom Theme</option>
+                </select>
+              </div>
+              <div class="field" style="margin-bottom:0;">
+                <label>Costume Details / Description</label>
+                <input type="text" id="duoDetails" placeholder="Costume details, props, or colors...">
+              </div>
+            </div>
+
+            <label class="radio-option">
+              <input type="radio" name="day1Event" value="states" onchange="handleDay1Change(this.value)">
+              States of India
+            </label>
+
+            <div id="boxStates" class="expand-box">
+              <div class="field">
+                <label>Select State / Region *</label>
+                <select id="stateName">
+                  <option value="">-- Select State --</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="West Bengal">West Bengal</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Andhra Pradesh / Telangana">Andhra Pradesh / Telangana</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Other State / Region">Other State / Region</option>
+                </select>
+              </div>
+              <div class="field" style="margin-bottom:0;">
+                <label>State Attire / Look Details</label>
+                <input type="text" id="stateDetails" placeholder="e.g. Nauvari Saree, Punjabi Kurta...">
+              </div>
+            </div>
+          </div>
+
+          <!-- DAY 2: 19th Sept -->
+          <div class="card">
+            <h3>Day 2 (19th Sept) Event Selection</h3>
+            <span class="day-rule-badge">Max 1 category allowed on Day 2</span>
+
+            <label class="radio-option">
+              <input type="radio" name="day2Event" value="none" checked onchange="handleDay2Change(this.value)">
+              Not Participating on Day 2
+            </label>
+
+            <label class="radio-option">
+              <input type="radio" name="day2Event" value="couple" onchange="handleDay2Change(this.value)">
+              Couple Round
+            </label>
+
+            <div id="boxCouple" class="expand-box">
+              <div class="field">
+                <label>Couple Costume Theme *</label>
+                <select id="coupleTheme">
+                  <option value="">-- Select Theme --</option>
+                  <option value="Royal Heritage / Traditional Grandeur">Royal Heritage / Traditional Grandeur</option>
+                  <option value="Matching Pastel / Festive Palette">Matching Pastel / Festive Palette</option>
+                  <option value="Regional Traditional Coordination">Regional Traditional Coordination</option>
+                  <option value="Contemporary Bollywood Glam">Contemporary Bollywood Glam</option>
+                  <option value="Other / Custom Theme">Other / Custom Theme</option>
+                </select>
+              </div>
+              <div class="field" style="margin-bottom:0;">
+                <label>Costume Details / Description</label>
+                <input type="text" id="coupleDetails" placeholder="Describe outfits and color pairing...">
+              </div>
+            </div>
+
+            <label class="radio-option">
+              <input type="radio" name="day2Event" value="senior" onchange="handleDay2Change(this.value)">
+              Senior Citizens – Vintage Elegance
+            </label>
+
+            <div id="boxSenior" class="expand-box">
+              <div class="field">
+                <label>Vintage Attire Category *</label>
+                <select id="seniorTheme">
+                  <option value="">-- Select Category --</option>
+                  <option value="Classic Vintage Traditional (Handloom, Khadi, Silk)">Classic Vintage Traditional (Handloom, Khadi, Silk)</option>
+                  <option value="Retro Era Style (70s/80s Bollywood)">Retro Era Style (70s/80s Bollywood)</option>
+                  <option value="Timeless Regional Classic">Timeless Regional Classic</option>
+                  <option value="Other Vintage Style">Other Vintage Style</option>
+                </select>
+              </div>
+              <div class="field" style="margin-bottom:0;">
+                <label>Costume Details / Description</label>
+                <input type="text" id="seniorDetails" placeholder="Describe outfit, shawl, vintage jewelry...">
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit" id="submitBtn">Submit Registration</button>
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="success-card" id="successMsg">
+      <div class="success-icon">✓</div>
+      <h2 style="color: #2e7d32; margin: 0 0 10px 0; font-size: 22px;">Registration Submitted!</h2>
+      <p style="color: #555; margin: 0; font-size: 15px;">Your registration has been saved to the sheet.</p>
+      <button type="button" class="btn-another" onclick="resetFormForAnother()">+ Register Another Contestant</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // PASTE YOUR APPS SCRIPT WEB APP URL HERE:
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyJ9LBXfNPu6Rm9vkujjTIqPqCXrqf0kB1YobmWFP-QLx9EBjqBM_mpoM3n48S4TqzH/exec';
+
+  function handleDay1Change(val) {
+    document.getElementById('boxDuo').style.display = (val === 'duo') ? 'block' : 'none';
+    document.getElementById('duoTheme').required = (val === 'duo');
+    document.getElementById('boxStates').style.display = (val === 'states') ? 'block' : 'none';
+    document.getElementById('stateName').required = (val === 'states');
+  }
+
+  function handleDay2Change(val) {
+    document.getElementById('boxCouple').style.display = (val === 'couple') ? 'block' : 'none';
+    document.getElementById('coupleTheme').required = (val === 'couple');
+    document.getElementById('boxSenior').style.display = (val === 'senior') ? 'block' : 'none';
+    document.getElementById('seniorTheme').required = (val === 'senior');
+  }
+
+  function submitRegistration(e) {
+    e.preventDefault();
+
+    const d1 = document.querySelector('input[name="day1Event"]:checked').value;
+    const d2 = document.querySelector('input[name="day2Event"]:checked').value;
+
+    if (d1 === 'none' && d2 === 'none') {
+      alert("Please select at least one event category (either on Day 1 or Day 2) to register.");
+      return;
+    }
+
+    const payload = {
+      names: document.getElementById('names').value.trim(),
+      flat: document.getElementById('flat').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      altPhone: document.getElementById('altPhone').value.trim(),
+      day1Selected: d1,
+      duoTheme: (d1 === 'duo') ? document.getElementById('duoTheme').value : '',
+      duoDetails: (d1 === 'duo') ? document.getElementById('duoDetails').value : '',
+      stateName: (d1 === 'states') ? document.getElementById('stateName').value : '',
+      stateDetails: (d1 === 'states') ? document.getElementById('stateDetails').value : '',
+      day2Selected: d2,
+      coupleTheme: (d2 === 'couple') ? document.getElementById('coupleTheme').value : '',
+      coupleDetails: (d2 === 'couple') ? document.getElementById('coupleDetails').value : '',
+      seniorTheme: (d2 === 'senior') ? document.getElementById('seniorTheme').value : '',
+      seniorDetails: (d2 === 'senior') ? document.getElementById('seniorDetails').value : ''
+    };
+
+    // Instant UI switch
+    document.getElementById('formWrapper').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Send payload in background
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(function(err) {
+      alert("Error submitting: " + err);
+      document.getElementById('successMsg').style.display = 'none';
+      document.getElementById('formWrapper').style.display = 'block';
+    });
+  }
+
+  function resetFormForAnother() {
+    document.getElementById('showForm').reset();
+    handleDay1Change('none');
+    handleDay2Change('none');
+    document.getElementById('successMsg').style.display = 'none';
+    document.getElementById('formWrapper').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
